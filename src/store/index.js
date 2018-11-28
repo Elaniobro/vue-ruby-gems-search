@@ -24,8 +24,6 @@ let store = new Vuex.Store({ // eslint-disable-line
   mutations: {
     addGems: (state, payload) => {
       state.searchResults = payload.data;
-      let intersection = state.savedGems.filter((x, i) => payload.data.includes(x));
-      // console.log(state.savedGems);
     },
     setLocalStorage: (state) => {
       localStorage.setItem('savedGems', JSON.stringify(state.savedGems));
