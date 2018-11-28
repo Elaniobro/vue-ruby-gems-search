@@ -43,7 +43,10 @@ let store = new Vuex.Store({ // eslint-disable-line
         .then((response) => {
           context.commit('addGems', response);
         })
-        .catch(err => console.log(err));
+        .catch((err) => {
+          context.commit('addGems', '');
+          console.log(err);
+        });
     },
     saveGem: (context, gem) => {
       return context.commit('saveGem', gem);
